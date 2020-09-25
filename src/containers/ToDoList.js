@@ -1,8 +1,13 @@
 import React from 'react';
+import Todo from '../components/ToDo';
 import { connect } from 'react-redux';
 
 const ToDoList = ({todos}) => {
-  console.log(todos);
+  const displayTodos = todos.map(todo => {
+    return (
+      <Todo
+    )
+  })
 
 
   return (
