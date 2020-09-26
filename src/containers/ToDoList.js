@@ -6,12 +6,16 @@ const ToDoList = ({todos}) => {
   const displayTodos = todos.map(todo => {
     return (
       <Todo
+        {...todo}
+        key={todo.id}
+      />
     )
   })
 
 
   return (
     <ul>
+      {displayTodos}
     </ul>
   )
 }
