@@ -1,9 +1,16 @@
 import React from 'react';
 
-const ToDo = ({ id, text, completed }) => {
+const ToDo = ({ id, todo, completed, isCompleted }) => {
   return (
-    <li>{text}</li>
+    <li 
+      className={(completed) ? "completed": "not-completed"}
+      onClick={() => isCompleted(id)}
+    >
+    {todo}
+    </li>
   )
 }
+
+
 
 export default ToDo;

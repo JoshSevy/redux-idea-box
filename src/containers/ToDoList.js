@@ -1,17 +1,18 @@
 import React from 'react';
-import Todo from '../components/ToDo';
+import ToDo from '../components/ToDo';
 import { connect } from 'react-redux';
+import { isCompleted } from '../actions';
 
-const ToDoList = ({todos}) => {
+const ToDoList = ({todos, isCompleted}) => {
   const displayTodos = todos.map(todo => {
     return (
-      <Todo
+      <ToDo
         {...todo}
         key={todo.id}
+        isCompleted={isCompleted}
       />
     )
   })
-
 
   return (
     <ul>
@@ -21,7 +22,8 @@ const ToDoList = ({todos}) => {
 }
 
 const mapStateToProps = state => ({
-  todos: state.todos
+  todos: state.todos,
 });
 
-export default connect(mapStateToProps)(ToDoList);
+
+export default connect(mapStateToProps, {isCompleted})(ToDoList);

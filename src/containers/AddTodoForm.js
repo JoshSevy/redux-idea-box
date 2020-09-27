@@ -36,6 +36,6 @@ class AddTodoForm extends Component {
 
 const mapDispatchToProps = dispatch => ({
   addToDo: text => dispatch( addToDo(text))
-})
+});
 
 export default connect(null, mapDispatchToProps)(AddTodoForm);
